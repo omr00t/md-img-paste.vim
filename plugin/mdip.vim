@@ -166,7 +166,6 @@ function! mdip#MarkdownClipboardImage()
     let workdir = s:SafeMakeDir()
     " change temp-file-name and image-name
     let g:mdip_tmpname = g:mdip_imgname . '_' . s:RandomName()
-    endif
 
     let tmpfile = s:SaveFileTMP(workdir, g:mdip_tmpname)
     if tmpfile == 1
