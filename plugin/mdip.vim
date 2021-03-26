@@ -178,7 +178,7 @@ function! mdip#MarkdownClipboardImage()
         let ipos = getcurpos()
         execute "normal! a" . g:mdip_tmpname[1:] . "](" . relpath . ")"
         call setpos('.', ipos)
-        execute "normal! vt]\<C-g>"
+        " execute "normal! vt]\<C-g>"
     endif
 endfunction
 
