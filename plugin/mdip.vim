@@ -156,13 +156,6 @@ function! s:RandomName()
     return l:new_random
 endfunction
 
-function! s:InputName()
-    call inputsave()
-    let name = input('Image name: ')
-    call inputrestore()
-    return name
-endfunction
-
 function! mdip#MarkdownClipboardImage()
     " detect os: https://vi.stackexchange.com/questions/2572/detect-os-in-vimscript
     let s:os = "Windows"
@@ -172,9 +165,7 @@ function! mdip#MarkdownClipboardImage()
 
     let workdir = s:SafeMakeDir()
     " change temp-file-name and image-name
-    let g:mdip_tmpname = s:InputName()
-    if empty(g:mdip_tmpname)
-      let g:mdip_tmpname = g:mdip_imgname . '_' . s:RandomName()
+    let g:mdip_tmpname = g:mdip_imgname . '_' . s:RandomName()
     endif
 
     let tmpfile = s:SaveFileTMP(workdir, g:mdip_tmpname)
